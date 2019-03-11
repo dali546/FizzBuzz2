@@ -1,13 +1,12 @@
 package com.example;
 
-public class AppendRule implements Rule {
+public class RewriteRule implements Rule {
+    private final String word;
+    private final int mod;
 
-    private int mod;
-    private String word;
-
-    AppendRule(int mod, String word) {
-        this.mod = mod;
+    RewriteRule(int i, String word) {
         this.word = word;
+        this.mod = i;
     }
 
     @Override
@@ -17,6 +16,7 @@ public class AppendRule implements Rule {
 
     @Override
     public void appendSb(StringBuilder sb) {
+        sb.delete(0, sb.length());
         sb.append(word);
     }
 }

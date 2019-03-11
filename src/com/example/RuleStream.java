@@ -10,12 +10,10 @@ class RuleStream {
             add(new AppendRule(3, "Fizz"));
             add(new AppendRule(5, "Buzz"));
             add(new AppendRule(7, "Bang"));
-            add(new AppendRule(11, "Bong", true));
-            add(new AppendRule(13, "Fezz"));
-            add(new AppendRule(17, "", false, true));
+            add(new RewriteRule(11, "Bong"));
+            add(new InsertBeforeRule(13, "Fezz", "B"));
+            add(new ReverseRule(17));
         }};
         return rules.stream();
     }
-
-
 }
